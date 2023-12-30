@@ -1,21 +1,26 @@
 from datetime import date
 import time
 from person import Person
+import csv
 
-
-all_persons = []
-radek = Person(mail="radocha.w@gmail.com", name="Radek", day=30, month=12)
-all_persons.append(radek)
-jacek = Person(mail="rad.wierzgala@gmail.com", name="Jacek", day=31, month=12)
-all_persons.append(jacek)
 
 if __name__ == "__main__":
+    all_persons = []
+    
+    with open('list.csv', mode='r') as csv_file:
+        csv_reader = csv.DictReader(csv_file)
+        
+        for row in csv_reader:
+            print(row)
+            person = Person(name = row['name'], mail= row['mail'], day= int(row['day']), month= int(row['month']))
+            all_persons.append(person)
+            
+        print(all_persons)    
+            
     while True:  
         today = date.today()
         for person in all_persons:
             if person.day == today.day and person.month == today.month:
-                person.send_mail()
-                               
-        # time.sleep(3000)
+                person.send_mail()                        
         time.sleep(60*60*24)
         

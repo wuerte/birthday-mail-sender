@@ -3,12 +3,15 @@ from email.mime.text import MIMEText
 
 mail_content = """
         Hello,
-        Today is Your birthsday
+        Happy birthday to You!!!!
+        Mail sended by python script.
+        
+        Radosław Wierzgała
     """
 subject = "test title"
 key = "dbjztgprpebwissj" 
 my_mail = "rad.wierzgala@gmail.com"
-# text = f"Subjetct: {subject} \n\n {mail_content}"
+ 
     
 class Person:   
     def __init__(self, name, mail, day, month):
