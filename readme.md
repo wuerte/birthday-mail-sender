@@ -1,0 +1,1 @@
+Birthday mail sending by python script
