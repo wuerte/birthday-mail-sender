@@ -1,16 +1,16 @@
 import smtplib
 from email.mime.text import MIMEText
+from configparser import ConfigParser
 
-mail_content = """
-Hello,
-Happy birthday to You!!!!
-Mail sended by python script.
+config = ConfigParser()
+config.read("settings.ini")
 
-Radosław Wierzgała
-    """
-subject = "test title"
-key = "dbjztgprpebwissj" 
-my_mail = "rad.wierzgala@gmail.com"
+mail_content = config["Conf"]["mail_content"]
+subject = config["Conf"]["subject"]
+key = config["Conf"]["key"]
+my_mail = config["Conf"]["my_mail"]
+
+print(key)
  
     
 class Person:   
