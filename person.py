@@ -9,8 +9,6 @@ mail_content = config["Conf"]["mail_content"]
 subject = config["Conf"]["subject"]
 key = config["Conf"]["key"]
 my_mail = config["Conf"]["my_mail"]
-
-print(key)
  
     
 class Person:   
