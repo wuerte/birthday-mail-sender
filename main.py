@@ -8,14 +8,10 @@ if __name__ == "__main__":
     all_persons = []
     
     with open('list.csv', mode='r') as csv_file:
-        csv_reader = csv.DictReader(csv_file)
-        
+        csv_reader = csv.DictReader(csv_file)        
         for row in csv_reader:
-            print(row)
-            person = Person(name = row['name'], mail= row['mail'], day= int(row['day']), month= int(row['month']))
-            all_persons.append(person)
-            
-        print(all_persons)    
+            person = Person(name= row['name'], mail= row['mail'], day= int(row['day']), month= int(row['month']))
+            all_persons.append(person)             
             
     while True:  
         today = date.today()

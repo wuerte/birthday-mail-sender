@@ -2,11 +2,11 @@ import smtplib
 from email.mime.text import MIMEText
 
 mail_content = """
-        Hello,
-        Happy birthday to You!!!!
-        Mail sended by python script.
-        
-        Radosław Wierzgała
+Hello,
+Happy birthday to You!!!!
+Mail sended by python script.
+
+Radosław Wierzgała
     """
 subject = "test title"
 key = "dbjztgprpebwissj" 
