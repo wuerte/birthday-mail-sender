@@ -2,7 +2,7 @@ from datetime import date
 import time
 from person import Person
 import csv
-from validation import *
+import validation
 
 
 if __name__ == "__main__":
@@ -13,9 +13,9 @@ if __name__ == "__main__":
         row_number = 1        
         for row in csv_reader:
             print(f'loading row number: {row_number}')
-            month = validate_month(row['month'])
-            day = validate_day(row['day'], row['month'])
-            mail = validate_mail(row['mail'])
+            month = validation.validate_month(row['month'])
+            day = validation.validate_day(row['day'], row['month'])
+            mail = validation.validate_mail(row['mail'])
             
             person = Person(name= row['name'], mail= mail, day= day, month= month)
             all_persons.append(person)
@@ -25,7 +25,6 @@ if __name__ == "__main__":
         today = date.today()
         for person in all_persons:
             if person.day == today.day and person.month == today.month:
-                pass
-                # person.send_mail()                        
+                person.send_mail()                        
         time.sleep(60*60*24)
         

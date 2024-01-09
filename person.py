@@ -12,6 +12,9 @@ my_mail = config["Conf"]["my_mail"]
  
     
 class Person:   
+    '''
+    This class represent each Person that we would like to send email.
+    '''
     def __init__(self, name, mail, day, month):
         self.name = name
         self.mail = mail
@@ -20,6 +23,9 @@ class Person:
 
     
     def send_mail(self):
+        '''
+        This method is called to send email to ceratin person.
+        '''
         msg = MIMEText(mail_content)
         msg['Subject'] = subject
         msg['From'] = my_mail
